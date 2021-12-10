@@ -1,0 +1,21 @@
+<h1><%= @list.name %></h1>
+
+<ul>
+  <% @movies.each do |movie| %>
+  <li>
+    <%= movie.title %>
+  </li>
+  <li>
+    <%= movie.overview %>
+  </li>
+  <li>
+    <%= image_tag movie.poster_url, alt: "alttext", height: 270, crop: :fill %>
+  </li>
+  <li>
+    <%= movie.rating %>
+  </li>
+  <% end %>
+</ul>
+
+<%= link_to "create new bookmark", new_list_bookmark_path(@list) %>
+<% link_to "Back", lists_path %>
